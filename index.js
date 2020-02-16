@@ -4,6 +4,7 @@ exports.handler = async (event) => {
         body: JSON.stringify({
             iceHoles: [
                 {
+                    id: 'suomensaari',
                     name: 'Suomensaaren sauna',
                     address: 'Suomensaarenkatu 7',
                     city: 'Tampere',
@@ -37,6 +38,7 @@ exports.handler = async (event) => {
                     basicPrice: 7
                 },
                 {
+                    id: 'rauhaniemi',
                     name: 'Rauhaniemen kansankylpylä',
                     address: 'Rauhaniementie 24',
                     city: 'Tampere',
@@ -79,6 +81,7 @@ exports.handler = async (event) => {
                     basicPrice: 7
                 },
                 {
+                    id: 'räikkä',
                     name: 'Räikän sauna',
                     address: 'Räikäntie',
                     city: 'Ylöjärvi',
@@ -112,6 +115,7 @@ exports.handler = async (event) => {
                     basicPrice: 4
                 },
                 {
+                    id: 'veittijärvi',
                     name: 'Veittijärven sauna',
                     address: 'Peukaloniementie 5',
                     city: 'Ylöjärvi',
@@ -150,6 +154,7 @@ exports.handler = async (event) => {
                     basicPrice: 8
                 },
                 {
+                    id: 'kuuma',
                     name: 'Saunaravintola Kuuma',
                     address: 'Laukontori 21',
                     city: 'Tampere',
@@ -185,8 +190,8 @@ exports.handler = async (event) => {
                     },
                     basicPrice: 15
                 },
-                
                 {
+                    id: 'alisniemi',
                     name: 'Alisniemen sauna',
                     address: 'Porintie 584',
                     city: 'Nokia',
@@ -222,6 +227,7 @@ exports.handler = async (event) => {
                     basicPrice: 5.50
                 },
                 {
+                    id: 'halkoniemi',
                     name: 'Halkoniemen sauna',
                     address: 'Ojanteentie 16',
                     city: 'Nokia',
@@ -260,6 +266,7 @@ exports.handler = async (event) => {
                     basicPrice: 7
                 },
                 {
+                    id: 'kaukajärvi',
                     name: 'Kaukajärven sauna',
                     address: 'Kangasalantie 80',
                     city: 'Tampere',
@@ -300,6 +307,7 @@ exports.handler = async (event) => {
                     basicPrice: 7
                 },
                 {
+                    id: 'tohloppi',
                     name: 'Tohlopin tynnyrisauna',
                     address: 'Pyydyspohjankatu 1',
                     city: 'Tampere',
@@ -337,6 +345,7 @@ exports.handler = async (event) => {
                     basicPrice: 5
                 },
                 {
+                    id: 'kaupinoja',
                     name: 'Kaupinojan sauna',
                     address: 'Kaupinpuistonkatu 1 A',
                     city: 'Tampere',
@@ -381,4 +390,3 @@ exports.handler = async (event) => {
     };
     return response;
 };
-
