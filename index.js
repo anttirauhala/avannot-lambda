@@ -349,7 +349,7 @@ exports.handler = async (event) => {
                     name: 'Kaupinojan sauna',
                     address: 'Kaupinpuistonkatu 1 A',
                     city: 'Tampere',
-                    description: 'aupinojan sauna sijaitsee Näsijärven rannalla UKK-Instituutin tuntumassa.' +
+                    description: 'Kaupinojan sauna sijaitsee Näsijärven rannalla UKK-Instituutin tuntumassa.' +
                     'Paikalla on sijainnut sauna vuodesta 1977, mutta se on kokenut monta muodonmuutosta, kasvanut ja komistunut.',
                     notes: [
                         'Joka kuun toinen tiistai sauna suljettu huoltotöitä varten',
@@ -384,6 +384,42 @@ exports.handler = async (event) => {
                         card: true
                     },
                     basicPrice: 8
+                },
+                {
+                    id: 'suolijärvi',
+                    name: 'Suolijärven sauna',
+                    address: 'Suolijärvenkatu 5',
+                    city: 'Tampere',
+                    description: 'Hervannassa, Suolijärven luonnon rauhassa sijaitseva ' +
+                    'tunnelmallinen puulämmitteinen ”mökkisauna”  on yhteissauna, ' +
+                    'jonka lauteille mahtuu kerralla noin 15 saunojaa. ' +
+                    'Lämpimänä on myös toinen, noin 9 saunojan puulämmitteinen sauna.',
+                    notes: [
+                        'Molemmat saunat ovat  lämpiminä, paitsi  ensimmäisen puolen tunnin aikana vain pienempi sauna on käytössä.',
+                        'Katso ohjeet pukutiloista saunan nettisivuilta'
+                    ],
+                    openingHours: [
+                        { day: 3, from: '17:00', to: '20:45' },
+                        { day: 5, from: '17:00', to: '20:45' },
+                        { day: 7, from: '14:30', to: '18:45' },
+                    ],
+                    homePage: 'https://juttusauna.fi/suolijarven-sauna/',
+                    payment: {
+                        mobilePay: true,
+                        smartum: true,
+                        smartumMobile: true,
+                        smartumSaldoCard: false,
+                        tyky: true,
+                        tykyOnline: false,
+                        ePassi: true,
+                        virike: false,
+                        eazybreak: true,
+                        edenred: true,
+                        edenredTicket: false,
+                        cash: true,
+                        card: true
+                    },
+                    basicPrice: 6
                 }
             ]
         }),
