@@ -14,7 +14,9 @@ exports.handler = async (event) => {
                     notes: [
                         'Ota mukaan juomavettä, hanoista tulee järvivettä!',
                         'Kioski saunan yhteydessä. Juomia, makkaraa yms.',
-                        'Sunnuntaisin miedommat löylyt'
+                        'Sunnuntaisin miedommat löylyt.',
+                        '10 kerran sarjalippu 60 eur.',
+                        'Vuosilippu 450 eur.'
                     ],
                     openingHours: [
                         { day: 1, from: '16:00', to: '20:00' },
@@ -29,9 +31,12 @@ exports.handler = async (event) => {
                         smartum: true,
                         smartumMobile: true,
                         tyky: true,
-                        tykyOnline: true,
+                        tykyOnline: false,
                         ePassi: true,
                         virike: false,
+                        eazyBreak: true,
+                        edenred: false,
+                        edenredTicket: false,
                         cash: true,
                         card: true
                     },
@@ -42,25 +47,20 @@ exports.handler = async (event) => {
                     name: 'Rauhaniemen kansankylpylä',
                     address: 'Rauhaniementie 24',
                     city: 'Tampere',
-                    description: 'Rauhaniemen Kansankylpylä sijaitsee idyllisissä maisemissa lähellä Tampereen keskustaa. ' +
-                    'Kansankylpylä tarjoaa kävijöilleen viihtyisän uimarannan lisäksi myös saunomismahdollisuudet. ' +
-                    'Rannalla toimii kesäkahvila, jonka valikoimista löytyy herkkuja ja suolaista purtavaa moneen makuun- vaikka uimarantapäivän eväiksi. ' +
-                    'Rauhaniemi sijaitsee vain pari kilometriä Keskustorilta Lapinnimen kaupunginosassa, jonne pääsee kätevästi keskustasta bussilla numero 2.\n\n ' +
-                    'Rauhaniemessä on myös hyvät paikoitustilat aivan uimarannan läheisyydessä.\n\n' +
-                    'Kesäkahvila on kesäaikaan avoinna joka päivä säävarauksin.\n\n' +
-                    'Rauhaniemessä on kaksi  saunaa, jotka ovat yhteisiä miehille ja naisille ja niissä saunotaan uima-asuisssa.\n\n' +
-                    'Saunojien käytössä on lämmitetyt pukuhuoneet.',
+                    description: 'Rauhaniemen Kansankylpylä sijaitsee lähellä Tampereen keskustaa.\n\n' +
+                    'Rauhaniemessä on kaksi  saunaa, jotka ovat yhteisiä miehille ja naisille ja niissä saunotaan uima-asuisssa.\n\n',
                     notes: [
-                        'Viikonloppuisin melko ruuhkainen, erityisesti iltaisin.'
+                        'Viikonloppuisin melko ruuhkainen, erityisesti iltaisin.',
+                        'Rauhallisimmat saunomishetket ovat joka päivä ennen klo 17.'
                     ],
                     openingHours: [
-                        { day: 1, from: '15:00', to: '20:00' },
-                        { day: 2, from: '15:00', to: '20:30' },
-                        { day: 3, from: '15:00', to: '20:00' },
-                        { day: 4, from: '15:00', to: '20:00' },
-                        { day: 5, from: '15:00', to: '20:30' },
-                        { day: 6, from: '13:00', to: '20:00' },
-                        { day: 7, from: '13:00', to: '20:00' },
+                        { day: 1, from: '14:00', to: '21:00' },
+                        { day: 2, from: '14:00', to: '21:00' },
+                        { day: 3, from: '14:00', to: '21:00' },
+                        { day: 4, from: '14:00', to: '21:00' },
+                        { day: 5, from: '14:00', to: '21:00' },
+                        { day: 6, from: '12:00', to: '21:00' },
+                        { day: 7, from: '12:00', to: '21:00' },
     
                     ],
                     homePage: 'https://www.rauhaniemi.net/',
@@ -70,18 +70,18 @@ exports.handler = async (event) => {
                         smartumMobile: false,
                         tyky: true,
                         tykyOnline: false,
-                        ePassi: false,
+                        ePassi: true,
                         virike: true,
-                        eazybreak: false,
-                        edenred: false,
-                        edenredTicket: false,
+                        eazyBreak: false,
+                        edenred: true,
+                        edenredTicket: true,
                         cash: true,
-                        card: true
+                        card: true,
                     },
-                    basicPrice: 7
+                    basicPrice: 8
                 },
                 {
-                    id: 'räikkä',
+                    id: 'raikka',
                     name: 'Räikän sauna',
                     address: 'Räikäntie',
                     city: 'Ylöjärvi',
@@ -95,7 +95,6 @@ exports.handler = async (event) => {
                         { day: 3, from: '12:00', to: '20:00' },
                         { day: 4, from: '12:00', to: '20:00' },
                         { day: 6, from: '11:00', to: '20:00' }
-    
                     ],
                     homePage: 'https://www.ylojarvenryhti.fi/hiihto/avantouinti/',
                     payment: {
@@ -106,7 +105,7 @@ exports.handler = async (event) => {
                         tykyOnline: false,
                         ePassi: false,
                         virike: false,
-                        eazybreak: false,
+                        eazyBreak: false,
                         edenred: false,
                         edenredTicket: false,
                         cash: true,
@@ -115,18 +114,14 @@ exports.handler = async (event) => {
                     basicPrice: 4
                 },
                 {
-                    id: 'veittijärvi',
+                    id: 'veittijarvi',
                     name: 'Veittijärven sauna',
                     address: 'Peukaloniementie 5',
                     city: 'Ylöjärvi',
-                    description: 'Vain muutaman kilometrin päässä Ylöjärven keskustasta sijaitsevista Veittijärven saunoista voi ' +
-                    'valita joko savusaunan tai sähkösaunan. ',
+                    description: 'Muutama kilometri Ylöjärven keskustasta. Käytössä savusauna ja sähkösauna.',
                     notes: [
                         'Katso pysäköinti- ja saapumisohje nettisivuilta!',
-                        'Saunan kassalta on myynnissä virvokkeita ja makkaraa.',
-                        'Grillausmahdollisuus sähkögrillillä.',
                         'Mikäli perjantaina tai lauantaina ei ole jälkilöylyvarausta, jatkuu yleinen vuoro klo 21.00 asti',
-                        'Lippukirja 60€/12 lippua, lipun arvo on 6€',
                         'Huom! Saunalla käy maksuvälineenä ainoastaan käteinen'
                     ],
                     openingHours: [
@@ -145,7 +140,7 @@ exports.handler = async (event) => {
                         tykyOnline: false,
                         ePassi: false,
                         virike: false,
-                        eazybreak: false,
+                        eazyBreak: false,
                         edenred: false,
                         edenredTicket: false,
                         cash: true,
@@ -164,16 +159,20 @@ exports.handler = async (event) => {
                     notes: [
                         'Virvokkeita mahdollusta ostaa saunomisen lomassa ravintolan luukulta ulkoa päin, maksu kortti/käteinen.',
                         'Saunaranneke tulee ostaa viimeistään tuntia ennen sulkemisaikaa.',
-                        'Hinta riippuu ajankohdasta. Ma: 8 eur. Ti-Pe ennen klo 17: 10 eur, 17 jälk. 15 eur. La 15 eur.',
-                        'Pyyhe vuokra 2 eur, uima-asu 2 eur.'
+                        'Hinta riippuu ajankohdasta.',
+                        'Ma-Ti: 8 eur, vain yksi sauna käytössä. ',
+                        'Ke-pe ennen klo 17.00 10 eur, arki-iltaisin ja lauantaina 15 eur.',
+                        'Pyyhe vuokra 2 eur, uima-asu 2 eur.',
+                        'Torstaisin aamusauna, hinta 11 eur. Klo 6.30, 8.00 tai 9.30',
+                        'Aamusauna+pyyhe, uinti, aamupuuro ja kahvi sekä Karhu:n tarjoamana Karhu 0,0% olut.'
                     ],
                     openingHours: [
-                        { day: 1, from: '11:00', to: '14:30' },
-                        { day: 2, from: '12:00', to: '21:00' },
-                        { day: 3, from: '12:00', to: '22:00' },
-                        { day: 4, from: '12:00', to: '22:00' },
-                        { day: 5, from: '12:00', to: '23:00' },
-                        { day: 6, from: '15:00', to: '23:00' }
+                        { day: 1, from: '11:00', to: '23:00' },
+                        { day: 2, from: '11:00', to: '23:00' },
+                        { day: 3, from: '11:00', to: '23:00' },
+                        { day: 4, from: '11:00', to: '23:00' },
+                        { day: 5, from: '11:00', to: '23:00' },
+                        { day: 6, from: '13:00', to: '23:00' }
     
                     ],
                     homePage: 'https://saunaravintolakuuma.fi/saunat/',
@@ -185,6 +184,9 @@ exports.handler = async (event) => {
                         tykyOnline: false,
                         ePassi: false,
                         virike: false,
+                        eazyBreak: false,
+                        edenred: false,
+                        edenredTicket: false,
                         cash: true,
                         card: true
                     },
@@ -199,14 +201,14 @@ exports.handler = async (event) => {
                     'rannalla n. 4 km etäisyydellä Nokian keskustasta ja 20 km:n päässä Tampereelta.',
                     notes: [
                         'Sauna avoinna myös kesäkaudella. Katso kesän aukiolo nettisivuilta.',
-                        'Vierailijat 5,50 € kerta, 11 kerran kortti 56 €',
-                        'Alle 12 vuotiaat vanhempien seurassa maksutta',
+                        '11 kerran kortti 60 eur',
+                        '12 vuotiaat ja nuoremmat vanhempien seurassa maksutta',
                         'Vain käteismaksu!'
                     ],
                     openingHours: [
-                        { day: 3, from: '15:00', to: '21:50' },
-                        { day: 5, from: '15:00', to: '21:50' },
-                        { day: 7, from: '13:00', to: '20:50' }
+                        { day: 3, from: '15:00', to: '21:30' },
+                        { day: 5, from: '15:00', to: '21:30' },
+                        { day: 7, from: '13:00', to: '21:30' }
     
                     ],
                     homePage: 'https://www.alisniemi.com/Avantouinti.html',
@@ -218,13 +220,13 @@ exports.handler = async (event) => {
                         tykyOnline: false,
                         ePassi: false,
                         virike: false,
-                        eazybreak: false,
+                        eazyBreak: false,
                         edenred: false,
                         edenredTicket: false,
                         cash: true,
                         card: false
                     },
-                    basicPrice: 5.50
+                    basicPrice: 6
                 },
                 {
                     id: 'halkoniemi',
@@ -234,29 +236,27 @@ exports.handler = async (event) => {
                     description: 'Halkoniemen saunaa ylläpitää vuonna 1988 perustettu Nokian Talviuimarit ry.\n\n' +
                         'Pyhäjärven rannalla, Halkoniemessä on mahdollisuus nauttia saunomisesta ja uinnista ympärivuotisesti.',
                     notes: [
-                        'NAISTEN VUORO TI/TO KLO 14-16',
-                        'Viimeinen tunti kuumat löylyt Ke/To (21-22)',
-                        'Vain käteismaksu omatoimisesti, tasarahalla.',
-                        'Sauna avoinna myös kesäkaudella. Katso kesän aukiolo nettisivuilta.',
-                        'Lukolliset lokerot käytettävissä.',
-                        'Kertamaksu alle 15-vuotiaa 2,00 EUR'
+                        'Tiukentuneiden kokoontumisrajoitusten johdosta sauna on torstaista 5.8.2021 lähtien avoinna vain jäsenille.',
+                        'Tiistaisin 22-23 ja keskiviikkoisin 21-22 kuumien löylyjen tunti.',
+                        'NAISTEN VUORO TI KLO 14-16 JA TO KLO 14-16.',
+                        'Ohjeet MobilePay-maksamiseen löytyvät saunalta.'
                     ],
                     openingHours: [
                         { day: 2, from: '14:00', to: '23:00' },
                         { day: 3, from: '16:00', to: '22:00' },
                         { day: 4, from: '14:00', to: '23:00' },
                         { day: 6, from: '14:00', to: '22:00' },
-                        { day: 7, from: '15:00', to: '22:00' },
+                        { day: 7, from: '16:00', to: '22:00' },
                     ],
                     homePage: 'https://www.nokiantalviuimarit.net/',
                     payment: {
-                        mobilePay: false,
+                        mobilePay: true,
                         smartum: false,
                         smartumMobile: false,
                         tyky: false,
                         tykyOnline: false,
                         ePassi: false,
-                        eazybreak: false,
+                        eazyBreak: false,
                         edenred: false,
                         edenredTicket: false,
                         virike: false,
@@ -266,27 +266,27 @@ exports.handler = async (event) => {
                     basicPrice: 7
                 },
                 {
-                    id: 'kaukajärvi',
+                    id: 'kaukajarvi',
                     name: 'Kaukajärven sauna',
                     address: 'Kangasalantie 80',
                     city: 'Tampere',
-                    description: 'Kirkasvetisen järven rannalla, soutustadionin kupeessa on tarjolla ' +
-                    'miellyttävä uimapaikka ympäri vuoden; kesäisin uimarannan valvontaa ja kesäkioskitoimintaa, '+
-                    'muina aikoina avantosaunaa. ',
+                    description: 'Kirkasvetisen järven rannalla, soutustadionin'+
+                    'kupeessa on tarjolla miellyttävä uimapaikka ympäri vuoden. ',
                     notes: [
+                        'Erittäin kirkasvetinen järvi.',
+                        'Parkeeraus pääosin tien varteen.',
                         'Talviaikaan on saatavana virvokkeita.',
-                        'Pukuhuoneista poistuttava MA-PE viimeistään klo 21.30 ja LA-SU klo 20.00.',
-                        'Kioski',
-                        'Hinta riippuu kellonajasta, arkisin enen klo 15 aikuinen 5 eur.'
+                        '10 kerran kortti 50 eur',
+                        '"Maksuvälineenä myös yleisimmät liikuntasetelit / sähköiset maksut."'
                     ],
                     openingHours: [
-                        { day: 1, from: '12:00', to: '21:15' },
-                        { day: 2, from: '12:00', to: '21:15' },
-                        { day: 3, from: '12:00', to: '21:15' },
-                        { day: 4, from: '12:00', to: '21:15' },
-                        { day: 5, from: '12:00', to: '21:15' },
-                        { day: 6, from: '12:00', to: '19:45' },
-                        { day: 7, from: '12:00', to: '19:45' },
+                        { day: 1, from: '12:00', to: '20:45' },
+                        { day: 2, from: '12:00', to: '20:45' },
+                        { day: 3, from: '12:00', to: '20:45' },
+                        { day: 4, from: '12:00', to: '20:45' },
+                        { day: 5, from: '12:00', to: '20:45' },
+                        { day: 6, from: '12:00', to: '20:45' },
+                        { day: 7, from: '12:00', to: '20:45' },
                     ],
                     homePage: 'https://www.kaukajarvensauna.fi/',
                     payment: {
@@ -298,13 +298,13 @@ exports.handler = async (event) => {
                         tykyOnline: true,
                         ePassi: true,
                         virike: false,
-                        eazybreak: true,
+                        eazyBreak: true,
                         edenred: true,
                         edenredTicket: true,
                         cash: true,
                         card: true
                     },
-                    basicPrice: 7
+                    basicPrice: 8
                 },
                 {
                     id: 'tohloppi',
@@ -336,7 +336,7 @@ exports.handler = async (event) => {
                         tykyOnline: false,
                         ePassi: true,
                         virike: false,
-                        eazybreak: false,
+                        eazyBreak: false,
                         edenred: false,
                         edenredTicket: false,
                         cash: true,
@@ -350,13 +350,16 @@ exports.handler = async (event) => {
                     address: 'Kaupinpuistonkatu 1 A',
                     city: 'Tampere',
                     description: 'Kaupinojan sauna sijaitsee Näsijärven rannalla UKK-Instituutin tuntumassa.' +
-                    'Paikalla on sijainnut sauna vuodesta 1977, mutta se on kokenut monta muodonmuutosta, kasvanut ja komistunut.',
+                    'Paikalla on sijainnut sauna vuodesta 1977, mutta se on kokenut monta muodonmuutosta, kasvanut ja komistunut.' +
+                    'Viimeksi sauna on avattu 25.4.2010 perusteellisen remontin jälkeen, joka tuli tehtäväksi saunassa 15.11.2008 riehuneen palon johdosta.',
                     notes: [
                         'Joka kuun toinen tiistai sauna suljettu huoltotöitä varten',
+                        'Arkipyhinä on la-vuoro.',
                         'Lipunmyynti päättyy arkisin ja sunnuntaisin klo 20.00 - lauantaisin klo 18.00',
                         'Löylyttely loppuu arkisin ja sunnuntaisin klo 20.30 - lauantaisin klo 18.30',
                         'Grilli suljetaan arkisin ja sunnuntaisin klo 20.30 - lauantaisin klo 18.30',
-                        'Pukutiloista pitää olla ulkona arkisin ja sunnuntaisin klo 20.45 - lauantaisin klo 18.45'
+                        'Pukutiloista pitää olla ulkona arkisin ja sunnuntaisin klo 20.45 - lauantaisin klo 18.45',
+                        '12 kerran kortti 70 eur'
                     ],
                     openingHours: [
                         { day: 1, from: '15:00', to: '20:45' },
@@ -364,7 +367,7 @@ exports.handler = async (event) => {
                         { day: 3, from: '15:00', to: '20:45' },
                         { day: 4, from: '15:00', to: '20:45' },
                         { day: 5, from: '15:00', to: '20:45' },
-                        { day: 6, from: '14:00', to: '18:45' },
+                        { day: 6, from: '12:00', to: '18:45' },
                         { day: 7, from: '12:00', to: '20:45' },
                     ],
                     homePage: 'https://www.talviuimarit.fi/kaupinojan-sauna/',
@@ -377,49 +380,57 @@ exports.handler = async (event) => {
                         tykyOnline: true,
                         ePassi: true,
                         virike: false,
-                        eazybreak: true,
+                        eazyBreak: true,
                         edenred: false,
                         edenredTicket: false,
                         cash: true,
                         card: true
                     },
-                    basicPrice: 8
+                    basicPrice: 10
                 },
                 {
                     id: 'suolijärvi',
                     name: 'Suolijärven sauna',
                     address: 'Suolijärvenkatu 5',
                     city: 'Tampere',
-                    description: 'Hervannassa, Suolijärven luonnon rauhassa sijaitseva ' +
-                    'tunnelmallinen puulämmitteinen ”mökkisauna”  on yhteissauna, ' +
-                    'jonka lauteille mahtuu kerralla noin 15 saunojaa. ' +
-                    'Lämpimänä on myös toinen, noin 9 saunojan puulämmitteinen sauna.',
+                    description: 'Suolijärven sauna aloittaa jälleen 12.9.2021. ' +
+                    'Varauskalenterista voit varata laudepaikan tunnin saunavuoroksi ' +
+                    'jompaan kumpaan saunaan, jonka lisäksi voit käyttää pukuhuoneita ' +
+                    'ja suihkuja ennen ja jälkeen saunavuorosi. Jos saunassasi on ' +
+                    'tilaa (eli ovella mainittu maksimi saunojamäärä ei ylity) ennen ' +
+                    'ja/tai jälkeen vuorosi, voit toki pidentää  saunomistasi. ' +
+                    'Vastaavasti jos toisessa saunassa on tilaa, voit käyttää myös sitä. '+
+                    'Voit tulla saunalle ”riskillä” ilman nettivarausta, tällöin ' +
+                    'saunan hoitaja luo varauksen lähimpään vapaita laudepaikkoja ' +
+                    'sisältävään vuoroon (vuoroja alkaa puolen tunnin välein).  '+
+                    'Muistathan peruuttaa varauksesi, jos et pääsekään paikalle.',                    
                     notes: [
-                        'Molemmat saunat ovat  lämpiminä, paitsi  ensimmäisen puolen tunnin aikana vain pienempi sauna on käytössä.',
-                        'Katso ohjeet pukutiloista saunan nettisivuilta'
+                        'Katso ohjeet pukutiloista saunan nettisivuilta.',
+                        '5 kerran kortti 30 eur',
+                        'Varaa mukaan juotavaa, vesipistettä ei ole saunan lähellä.',
+                        'Saunalla on kaasugrilli, jossa voit paistaa mukana tuomasi makkarat.'
                     ],
                     openingHours: [
-                        { day: 3, from: '17:00', to: '20:45' },
-                        { day: 5, from: '17:00', to: '20:45' },
-                        { day: 7, from: '14:30', to: '18:45' },
+                        { day: 3, from: '16:15', to: '20:45' },
+                        { day: 7, from: '13:15', to: '18:45' },
                     ],
                     homePage: 'https://juttusauna.fi/suolijarven-sauna/',
                     payment: {
                         mobilePay: true,
                         smartum: true,
-                        smartumMobile: true,
+                        smartumMobile: false,
                         smartumSaldoCard: false,
                         tyky: true,
                         tykyOnline: false,
                         ePassi: true,
                         virike: false,
-                        eazybreak: true,
+                        eazyBreak: true,
                         edenred: true,
                         edenredTicket: false,
                         cash: true,
                         card: true
                     },
-                    basicPrice: 6
+                    basicPrice: 7
                 }
             ]
         }),
